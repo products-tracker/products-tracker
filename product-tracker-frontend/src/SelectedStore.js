@@ -11,16 +11,19 @@ class SelectedStore extends React.Component {
   }
 
   render () {
+    console.log(this.props.store)
     return(
-      <Modal show={this.props.modal_on} onHide={this.props.modal_off}>
+      <Modal show={this.props.modal_show} onHide={this.props.modal_off}>
         <Modal.Dialog>
           <Modal.Header closeButton>
-            <Modal.Title>Modal title</Modal.Title>
+            <Modal.Title>Store Name{this.props.store.store_name}</Modal.Title>
           </Modal.Header>
 
           <Modal.Body>
-            <p>Modal body text goes here.</p>
-            <img src={this.props.image_src}/>
+            <p>Product Name: {this.props.store.product_name}</p>
+            <p>Product Quanity: {this.props.store.product_quantity}</p>
+            <p>Distance: {this.props.store.distance}</p>
+            <img src={this.props.store.image_src}/>
           </Modal.Body>
 
           <Modal.Footer>
