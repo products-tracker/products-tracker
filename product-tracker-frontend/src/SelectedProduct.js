@@ -1,6 +1,7 @@
 import React from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 
 class SelectedProduct extends React.Component {
   constructor(props) {
@@ -20,7 +21,10 @@ class SelectedProduct extends React.Component {
           </Modal.Header>
 
           <Modal.Body>
-            <img src={this.props.product.image}/>
+            <Card style={{ width: '18rem', margin: 'auto'}} onClick={this.click}>
+              <Card.Img variant="top" src={this.props.product.image} />
+            </Card>
+            {/* <img src={this.props.product.image}/> */}
             <p>Product Name: {this.props.product.title}</p>
             <p>Product Description: {this.props.product.description}</p>
             <p>Price: {this.props.product.price}</p>

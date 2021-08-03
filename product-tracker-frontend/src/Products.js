@@ -1,8 +1,8 @@
 import React from 'react';
 import axios from 'axios';
-import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button'
-import Product from './Product.js'
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+import Product from './Product.js';
 
 class Products extends React.Component {
   constructor(props) {
@@ -19,13 +19,26 @@ class Products extends React.Component {
       })
   }
 
+  displayGrid = () => {
+    console.log(this.state.products)
+
+  }
+
   render() {
     console.log(this.state.products)
     return(
-      this.state.products.map((product, idx) => {
-        return( <Product modal_on={this.props.modal_on} image={product.image} title={product.title} price={product.price} description={product.description} category={product.category} /> 
-          )
-      })
+      <div className="container">
+        <div className="row">
+          {this.state.products.map((product, idx) => {
+            return(
+              <div className="col-sm-4">
+                <Product modal_on={this.props.modal_on} image={product.image} title={product.title} price={product.price} description={product.description} category={product.category} /> 
+              </div>
+            )        
+          })}
+        </div>
+      </div>
+      
     )
   }
 }

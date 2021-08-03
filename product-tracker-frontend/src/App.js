@@ -11,6 +11,12 @@ import data from './data.json';
 import Stores from './Stores.js'
 import Products from './Products.js'
 import SelectedProduct from './SelectedProduct.js'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+import AboutUs from './AboutUs.js';
 
 class App extends React.Component {
   constructor(props) {
@@ -51,16 +57,23 @@ class App extends React.Component {
     console.log(this.state.obj)
     return(
       <div>
-        <Header />
-        <ProductForm handleChange={this.handleChange} handleSubmit={this.handleSubmit}/>
-        <div>
-          {/* <p>Stores</p>
-          <Stores data={data} modal_on={this.modal_on} />
-          <SelectedStore modal_show={this.state.display_modal} modal_off={this.modal_off} store={this.state.obj} /> */}
-          <p>Products</p>
-          <Products modal_on={this.modal_on} />
-          <SelectedProduct modal_show={this.state.display_modal} modal_off={this.modal_off} product={this.state.obj} />
-        </div>
+        <Router>
+          <Header />
+          <Switch>
+          <Route exact path="/">
+            <ProductForm handleChange={this.handleChange} handleSubmit={this.handleSubmit}/>
+              {/* <p>Stores</p>
+              <Stores data={data} modal_on={this.modal_on} />
+              <SelectedStore modal_show={this.state.display_modal} modal_off={this.modal_off} store={this.state.obj} /> */}
+              <p>Products</p>
+              <Products modal_on={this.modal_on} />
+              <SelectedProduct modal_show={this.state.display_modal} modal_off={this.modal_off} product={this.state.obj} />
+            </Route>
+          </Switch>
+            <Route exact path="/aboutus">
+              <AboutUs />
+            </Route>
+        </Router>
       </div>
     );
   }
