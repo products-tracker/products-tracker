@@ -1,0 +1,30 @@
+[
+  {
+    "image_url": "http://3.bp.blogspot.com/_DBYF1AdFaHw/TE-f0cDQ24I/AAAAAAAACZg/l-FdTZ6M7z8/s1600/Unicorn_and_Narwhal_by_dinglehopper.jpg",
+    "store_name": "Kohl's",
+    "product_name": "PS5",
+    "product_quantity": 5,
+    "distance": 2.5
+  },
+  {
+    "image_url": "http://3.bp.blogspot.com/_DBYF1AdFaHw/TE-f0cDQ24I/AAAAAAAACZg/l-FdTZ6M7z8/s1600/Unicorn_and_Narwhal_by_dinglehopper.jpg",
+    "store_name": "Target",
+    "product_name": "PS5",
+    "product_quantity": 10,
+    "distance": 3.5
+  },
+  {
+    "image_url": "http://3.bp.blogspot.com/_DBYF1AdFaHw/TE-f0cDQ24I/AAAAAAAACZg/l-FdTZ6M7z8/s1600/Unicorn_and_Narwhal_by_dinglehopper.jpg",
+    "store_name": "Walmart",
+    "product_name": "PS5",
+    "product_quantity": 7,
+    "distance": 4.5
+  },
+  {
+    "image_url": "http://3.bp.blogspot.com/_DBYF1AdFaHw/TE-f0cDQ24I/AAAAAAAACZg/l-FdTZ6M7z8/s1600/Unicorn_and_Narwhal_by_dinglehopper.jpg",
+    "store_name": "Gamestop",
+    "product_name": "PS5",
+    "product_quantity": 2,
+    "distance": 5.5
+  }
+]
