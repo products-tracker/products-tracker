@@ -9,6 +9,8 @@ import ProductForm from './ProductForm.js';
 import Header from './Header.js';
 import data from './data.json';
 import Stores from './Stores.js'
+import Products from './Products.js'
+import SelectedProduct from './SelectedProduct.js'
 
 class App extends React.Component {
   constructor(props) {
@@ -34,7 +36,6 @@ class App extends React.Component {
   modal_on = (obj) => {
     this.setState({
       display_modal: true,
-      // image_src: obj.image_src,
       obj: obj
     })
   }
@@ -45,6 +46,7 @@ class App extends React.Component {
     })
   }
 
+
   render() {
     console.log(this.state.obj)
     return(
@@ -52,9 +54,12 @@ class App extends React.Component {
         <Header />
         <ProductForm handleChange={this.handleChange} handleSubmit={this.handleSubmit}/>
         <div>
-          <p>Stores</p>
-          <Stores data={data} modal_on={this.modal_on}/>
-          <SelectedStore modal_show={this.state.display_modal} modal_off={this.modal_off} store={this.state.obj}/>
+          {/* <p>Stores</p>
+          <Stores data={data} modal_on={this.modal_on} />
+          <SelectedStore modal_show={this.state.display_modal} modal_off={this.modal_off} store={this.state.obj} /> */}
+          <p>Products</p>
+          <Products modal_on={this.modal_on} />
+          <SelectedProduct modal_show={this.state.display_modal} modal_off={this.modal_off} product={this.state.obj} />
         </div>
       </div>
     );
