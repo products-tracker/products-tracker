@@ -8,7 +8,8 @@ import SelectedStore from './SelectedStore.js';
 import ProductForm from './ProductForm.js';
 import Header from './Header.js';
 import data from './data.json';
-import Stores from './Stores.js'
+import Stores from './Stores.js';
+import Profile from './Profile.js';
 
 class App extends React.Component {
   constructor(props) {
@@ -52,6 +53,9 @@ class App extends React.Component {
         <Header />
         <ProductForm handleChange={this.handleChange} handleSubmit={this.handleSubmit}/>
         <div>
+          {this.props.auth0.isAuthenticated &&
+            <Profile />
+          }
           <p>Stores</p>
           <Stores data={data} modal_on={this.modal_on}/>
           <SelectedStore modal_show={this.state.display_modal} modal_off={this.modal_off} store={this.state.obj}/>
