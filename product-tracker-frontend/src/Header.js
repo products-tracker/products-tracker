@@ -37,12 +37,10 @@ render() {
         </Navbar.Collapse>
       </Container>
     </Navbar>
-      <LoginButton />
+      {/* <LoginButton />
       {this.props.auth0.isAuthenticated &&
         <LogoutButton />
-      }
-      <p>App Name Here</p>
-      <nav><a>About Us</a></nav>
+      } */}
     </div>
   )
 }
