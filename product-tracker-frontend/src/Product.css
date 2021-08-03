@@ -17,3 +17,7 @@ img {
   width: 75%;
   height: 50%;
 }
+
+.card-footer {
+  vertical-align: bottom;
+}

@@ -65,7 +65,6 @@ class App extends React.Component {
               {/* <p>Stores</p>
               <Stores data={data} modal_on={this.modal_on} />
               <SelectedStore modal_show={this.state.display_modal} modal_off={this.modal_off} store={this.state.obj} /> */}
-              <p>Products</p>
               <Products modal_on={this.modal_on} />
               <SelectedProduct modal_show={this.state.display_modal} modal_off={this.modal_off} product={this.state.obj} />
             </Route>
