@@ -54,7 +54,6 @@ class App extends React.Component {
     })
   }
 
-
   render() {
     console.log(this.state.obj)
     return(
@@ -76,11 +75,11 @@ class App extends React.Component {
             </Route>
         </Router>
         <ProductForm handleChange={this.handleChange} handleSubmit={this.handleSubmit}/>
-        <div>
+        {/* <div>
           {this.props.auth0.isAuthenticated &&
             <Profile />
           }
-        </div>
+        </div> */}
       </div>
     );
   }
