@@ -1,8 +1,11 @@
+
 import React from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Container from 'react-bootstrap/Container';
+import LogoutButton from "./LogoutButton";
+import LoginButton from "./LoginButton";
 
 class Header extends React.Component {
   constructor(props) {
@@ -34,6 +37,12 @@ render() {
         </Navbar.Collapse>
       </Container>
     </Navbar>
+      <LoginButton />
+      {this.props.auth0.isAuthenticated &&
+        <LogoutButton />
+      }
+      <p>App Name Here</p>
+      <nav><a>About Us</a></nav>
     </div>
   )
 }

@@ -17,6 +17,8 @@ import {
   Route
 } from "react-router-dom";
 import AboutUs from './AboutUs.js';
+import Profile from './Profile.js';
+
 
 class App extends React.Component {
   constructor(props) {
@@ -73,6 +75,12 @@ class App extends React.Component {
               <AboutUs />
             </Route>
         </Router>
+        <ProductForm handleChange={this.handleChange} handleSubmit={this.handleSubmit}/>
+        <div>
+          {this.props.auth0.isAuthenticated &&
+            <Profile />
+          }
+        </div>
       </div>
     );
   }
