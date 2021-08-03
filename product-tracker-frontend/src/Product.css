@@ -1,0 +1,23 @@
+/* .card-img-top {
+  height: auto;
+  max-height: 50px;
+  width: auto;
+  max-width: 50px;
+  object-fit: cover;
+}
+
+.image {
+  height: 50px;
+  max-height: 50px;
+  width: 50px;
+  max-width: 50px;
+} */
+
+img {
+  width: 75%;
+  height: 50%;
+}
+
+.card-footer {
+  vertical-align: bottom;
+}
