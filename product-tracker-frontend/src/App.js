@@ -26,19 +26,9 @@ class App extends React.Component {
     this.state = {
       product: '',
       display_modal: false,
-      obj: ''
+      obj: '',
+      storesData: []
     }
-  }
-
-  handleChange = e => {
-    e.preventDefault()
-    this.setState({ 
-      product: e.target.value
-    })
-  }
-
-  handleSubmit = e => {
-    e.preventDefault()
   }
 
   modal_on = (obj) => {
@@ -54,6 +44,12 @@ class App extends React.Component {
     })
   }
 
+  storesData = (stores) => {
+    this.setState({
+      storesData: stores
+    })
+  }
+
   render() {
     console.log(this.state.obj)
     return(
@@ -62,19 +58,18 @@ class App extends React.Component {
           <Header />
           <Switch>
           <Route exact path="/">
-            <ProductForm handleChange={this.handleChange} handleSubmit={this.handleSubmit}/>
-              {/* <p>Stores</p>
-              <Stores data={data} modal_on={this.modal_on} />
-              <SelectedStore modal_show={this.state.display_modal} modal_off={this.modal_off} store={this.state.obj} /> */}
-              <Products modal_on={this.modal_on} />
-              <SelectedProduct modal_show={this.state.display_modal} modal_off={this.modal_off} product={this.state.obj} />
+            <ProductForm storesData={this.storesData} />
+              <p>Stores</p>
+              <Stores stores={this.state.storesData} modal_on={this.modal_on} />
+              <SelectedStore modal_show={this.state.display_modal} modal_off={this.modal_off} store={this.state.obj} />
+              {/* <Products modal_on={this.modal_on} />
+              <SelectedProduct modal_show={this.state.display_modal} modal_off={this.modal_off} product={this.state.obj} /> */}
             </Route>
           </Switch>
             <Route exact path="/aboutus">
               <AboutUs />
             </Route>
         </Router>
-        <ProductForm handleChange={this.handleChange} handleSubmit={this.handleSubmit}/>
         {/* <div>
           {this.props.auth0.isAuthenticated &&
             <Profile />

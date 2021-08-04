@@ -16,14 +16,13 @@ class SelectedStore extends React.Component {
       <Modal show={this.props.modal_show} onHide={this.props.modal_off}>
         <Modal.Dialog>
           <Modal.Header closeButton>
-            <Modal.Title>Store Name{this.props.store.store_name}</Modal.Title>
+            <Modal.Title>Store Name{this.props.store.store}</Modal.Title>
           </Modal.Header>
 
           <Modal.Body>
-            <p>Product Name: {this.props.store.product_name}</p>
-            <p>Product Quanity: {this.props.store.product_quantity}</p>
+            <p>Address: {this.props.store.address}</p>
+            <p>Product Quanity: {this.props.store.low_in_stock}</p>
             <p>Distance: {this.props.store.distance}</p>
-            <img src={this.props.store.image_src}/>
           </Modal.Body>
 
           <Modal.Footer>
