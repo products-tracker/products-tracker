@@ -1,0 +1,4 @@
+  - As a user, I want to know the availability of a product in my nearby location
+  - As a developer, I want to filter out the noise and provide the data in a nice form for user.
+  - As a user, I want to have an easy to use UI 
+  - As a user I want to be able to save products into my shopping cart
