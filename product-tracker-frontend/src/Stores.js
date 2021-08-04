@@ -9,16 +9,15 @@ class Stores extends React.Component {
     }
   }
 
-  // "image_url": "http://3.bp.blogspot.com/_DBYF1AdFaHw/TE-f0cDQ24I/AAAAAAAACZg/l-FdTZ6M7z8/s1600/Unicorn_and_Narwhal_by_dinglehopper.jpg",
-  // "store_name": "Kohl's",
-  // "product_name": "PS5",
-  // "product_quantity": 5,
-  // "distance": 2.5
+  // this.store = data.name ;
+  // this.address = data.address;
+  // this.lowInStock = data.lowStock;
+  // this.distance = data.distance;
 
   render() {
     return(
-      this.props.data.map(store => {
-          return <Store modal_on={this.props.modal_on} image_src={store.image_url} store_name={store.store_name} product_name={store.product_name} product_quantity={store.product_quantity} distance={store.distance} />
+      this.props.stores.map(store => {
+          return <Store modal_on={this.props.modal_on} store={store.name} address={store.address} low_in_stock={store.lowStock} distance={store.distance} />
         }
       )
     )

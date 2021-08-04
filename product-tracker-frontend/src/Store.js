@@ -14,18 +14,18 @@ class Store extends React.Component {
       // clicked: this.state.clicked + 1,
       // favorite: true
     })
-    this.props.modal_on({image_src: this.props.image_src, store_name: this.props.store_name, product_name: this.props.product_name, product_quantity: this.props.product_quantity, distance: this.props.distance})
+    this.props.modal_on({store: this.props.store, address: this.props.address, low_in_stock: this.props.low_in_stock, distance: this.props.distance})
   }
 
   render() {
     return(
     <Card style={{ width: '18rem' }} onClick={this.click}>
-        <Card.Img variant="top" src={this.props.image_src} />
+        <Card.Img variant="top"/>
         <Card.Body>
-          <Card.Title>Store Name: {this.props.store_name}</Card.Title>
+          <Card.Title>Store Name: {this.props.store}</Card.Title>
           <Card.Text>
-            <p>Product Name: {this.props.product_name}</p>
-            <p>Product Quantity: {this.props.product_quantity}</p>
+            <p>Address: {this.props.address}</p>
+            <p>Product Stock: {this.props.low_in_stock}</p>
             <p>Distance: {this.props.distance}</p>
           </Card.Text>
         </Card.Body>
