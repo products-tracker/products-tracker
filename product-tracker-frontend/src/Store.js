@@ -21,7 +21,7 @@ class Store extends React.Component {
   }
 
   addStore = () => {
-    axios.post(`http://localhost:3001/store?store=${this.state.store}&address=${this.state.address}&low_in_stock=${this.state.low_in_stock}&distance=${this.state.distance}`)
+    axios.post(`http://localhost:3001/store?store=${this.state.store}&address=${this.state.address}&low_in_stock=${this.state.low_in_stock}&distance=${this.state.distance}&favorite=${this.state.favorite}`)
     .then(() => this.setState({ store: '', address: '', low_in_stock: '', distance: 0}))
     .catch(error => {
       console.error('There was an error!', error);
@@ -29,7 +29,7 @@ class Store extends React.Component {
   }
 
   removeStore = () => {
-    axios.delete(`http://localhost:3001/store?store=${this.state.store}&address=${this.state.address}&low_in_stock=${this.state.low_in_stock}&distance=${this.state.distance}`)
+    axios.delete(`http://localhost:3001/store?store=${this.state.store}&address=${this.state.address}&low_in_stock=${this.state.low_in_stock}&distance=${this.state.distance}&favorite=${this.state.favorite}`)
     .then(() => this.setState({ store: '', address: '', low_in_stock: '', distance: 0}))
     .catch(error => {
       console.error('There was an error!', error);
