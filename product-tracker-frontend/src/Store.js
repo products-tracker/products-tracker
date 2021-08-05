@@ -21,22 +21,24 @@ class Store extends React.Component {
   }
 
   addStore = () => {
-    axios.post(`http://localhost:3001/store?store=${this.state.store}&address=${this.state.address}&low_in_stock=${this.state.low_in_stock}&distance=${this.state.distance}&favorite=${this.state.favorite}`)
-    .then(() => this.setState({ store: '', address: '', low_in_stock: '', distance: 0}))
+    console.log(`http://localhost:3001/store?store=${this.state.store}&address=${this.state.address}&low_in_stock=${this.state.low_in_stock}&distance=${this.state.distance}&favorite=${this.state.favorite}`)
+    axios.post(`http://localhost:3001/store?store=${this.props.store}&address=${this.props.address}&low_in_stock=${this.props.low_in_stock}&distance=${this.props.distance}&favorite=true`)
+    .then(() => this.setState({ store: '', address: '', low_in_stock: '', distance: 0, favorite: false}))
     .catch(error => {
       console.error('There was an error!', error);
   });
   }
 
   removeStore = () => {
-    axios.delete(`http://localhost:3001/store?store=${this.state.store}&address=${this.state.address}&low_in_stock=${this.state.low_in_stock}&distance=${this.state.distance}&favorite=${this.state.favorite}`)
-    .then(() => this.setState({ store: '', address: '', low_in_stock: '', distance: 0}))
+    axios.delete(`http://localhost:3001/store?store=${this.props.store}&address=${this.props.address}&low_in_stock=${this.props.low_in_stock}&distance=${this.props.distance}&favorite=false`)
+    .then(() => this.setState({ store: '', address: '', low_in_stock: '', distance: 0, favorite: false}))
     .catch(error => {
       console.error('There was an error!', error);
   });
   }
 
   click = () => {
+    // console.log(this.props)
     this.setState({
       store: this.props.store, 
       address: this.props.address, 
@@ -48,11 +50,13 @@ class Store extends React.Component {
         favorite: false
         //write a function that removes the store from the DB
       })
+      this.removeStore()
     } else {
       this.setState({
         favorite: true
         //write a function that adds the store to the DB
       })
+      this.addStore()
     }
     // this.props.modal_on({store: this.props.store, address: this.props.address, low_in_stock: this.props.low_in_stock, distance: this.props.distance})
   }
