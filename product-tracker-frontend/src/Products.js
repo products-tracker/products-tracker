@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
+//import Card from 'react-bootstrap/Card';
+//import Button from 'react-bootstrap/Button';
 import Product from './Product.js';
 
 class Products extends React.Component {

@@ -1,7 +1,7 @@
 import React from 'react';
-import axios from 'axios';
+//import axios from 'axios';
 import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
+//import Button from 'react-bootstrap/Button';
 import './Product.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 

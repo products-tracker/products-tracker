@@ -1,8 +1,9 @@
 import React from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
+//import Card from 'react-bootstrap/Card';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 import Store from './Store.js';
 import SelectedStore from './SelectedStore.js';
 import axios from 'axios';
@@ -12,6 +13,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 // const search = <FontAwesomeIcon icon={faSearch} />
 import InputGroup from 'react-bootstrap/InputGroup';
+
 
 class ProductForm extends React.Component {
   constructor(props) {

@@ -8,6 +8,8 @@ import LogoutButton from "./LogoutButton";
 import LoginButton from "./LoginButton";
 import BestBuyLogo from './img/BestBuyLogo.png'
 import './Header.css';
+import { withAuth0 } from '@auth0/auth0-react';
+
 
 class Header extends React.Component {
   constructor(props) {
@@ -39,13 +41,15 @@ render() {
         </Navbar.Collapse>
       </Container>
     </Navbar>
-      {/* <LoginButton />
+      {!this.props.auth0.isAuthenticated &&
+        <LoginButton />
+      }
       {this.props.auth0.isAuthenticated &&
         <LogoutButton />
-      } */}
+      }
     </div>
   )
 }
 }
 
-export default Header;
+export default withAuth0(Header);
