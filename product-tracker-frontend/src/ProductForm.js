@@ -60,6 +60,7 @@ class ProductForm extends React.Component {
 
   render() {
     return(
+      <div className="form">
       <Form>
         <Form.Group className="formgroup" controlId="formcontroller">
           {/* <Form.Label>Product SKU #</Form.Label> */}
@@ -77,9 +78,11 @@ class ProductForm extends React.Component {
 
           {/* </InputGroup> */}
 
+          <Button variant="primary" type="submit" onClick={this.handleSubmit}>Submit</Button>
         </Form.Group>
-        <Button variant="primary" type="submit" onClick={this.handleSubmit}>Submit</Button>
+
       </Form>
+      </div>
     )
   }
 }

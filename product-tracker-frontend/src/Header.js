@@ -39,14 +39,15 @@ render() {
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
+        {!this.props.auth0.isAuthenticated &&
+        <LoginButton />
+        }
+        {this.props.auth0.isAuthenticated &&
+          <LogoutButton />
+        }
       </Container>
     </Navbar>
-      {!this.props.auth0.isAuthenticated &&
-        <LoginButton />
-      }
-      {this.props.auth0.isAuthenticated &&
-        <LogoutButton />
-      }
+      
     </div>
   )
 }
