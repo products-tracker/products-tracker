@@ -6,6 +6,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import Container from 'react-bootstrap/Container';
 import LogoutButton from "./LogoutButton";
 import LoginButton from "./LoginButton";
+import { withAuth0 } from '@auth0/auth0-react';
 
 class Header extends React.Component {
   constructor(props) {
@@ -37,13 +38,15 @@ render() {
         </Navbar.Collapse>
       </Container>
     </Navbar>
-      {/* <LoginButton />
+      {!this.props.auth0.isAuthenticated &&
+        <LoginButton />
+      }
       {this.props.auth0.isAuthenticated &&
         <LogoutButton />
-      } */}
+      }
     </div>
   )
 }
 }
 
-export default Header;
+export default withAuth0(Header);
