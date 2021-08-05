@@ -9,17 +9,20 @@ class Stores extends React.Component {
     }
   }
 
-  // this.store = data.name ;
-  // this.address = data.address;
-  // this.lowInStock = data.lowStock;
-  // this.distance = data.distance;
-
   render() {
     return(
-      this.props.stores.map(store => {
-          return <Store modal_on={this.props.modal_on} store={store.name} address={store.address} low_in_stock={store.lowStock} distance={store.distance} />
-        }
-      )
+      <div className="container">
+        <div className="row">
+          {this.props.stores.map(store => {
+              return (
+                <div className="col-sm-4">
+                  <Store modal_on={this.props.modal_on} store={store.store} address={store.address} low_in_stock={store.lowInStock} distance={store.distance} />
+                </div>
+              )
+            }
+          )}
+        </div>
+      </div>
     )
   }
 }

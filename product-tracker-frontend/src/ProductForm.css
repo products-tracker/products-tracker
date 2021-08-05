@@ -1,0 +1,25 @@
+.form-control {
+  margin-top: 25px;
+  margin-left: 5%;
+  width: 40%;
+}
+
+.formgroup {
+  position: relative;
+}
+
+.product {
+  position: absolute;
+}
+
+.zipcode {
+  position: absolute;
+  margin-left: 50%;
+}
+
+.btn {
+  /* justify-content: center;
+  align-items: center; */
+  margin-left: 44%;
+  margin-top: 80px;
+  }
