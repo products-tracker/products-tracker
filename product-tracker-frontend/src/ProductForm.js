@@ -31,7 +31,7 @@ class ProductForm extends React.Component {
     console.log('zip code: ' + this.state.postalCode)
     axios.get(`http://localhost:3001/products?sku=${this.state.sku}&postalCode=${this.state.postalCode}`)
      .then(stores => {
-       this.setState({stores: stores.data})
+      this.props.storesData(stores.data)
      })
      console.log(this.state.stores)
  }
@@ -54,7 +54,7 @@ class ProductForm extends React.Component {
     console.log('here')
     e.preventDefault()
     this.getStores()
-    this.props.storesData(this.state.stores)
+    //this.props.storesData(this.state.stores)
     console.log('stores: ' + this.state.stores)
   }
 
