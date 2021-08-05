@@ -59,7 +59,6 @@ class App extends React.Component {
           <Switch>
           <Route exact path="/">
             <ProductForm storesData={this.storesData} />
-              <p>Stores</p>
               <Stores stores={this.state.storesData} modal_on={this.modal_on} />
               <SelectedStore modal_show={this.state.display_modal} modal_off={this.modal_off} store={this.state.obj} />
               {/* <Products modal_on={this.modal_on} />

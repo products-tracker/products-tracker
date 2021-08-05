@@ -6,6 +6,8 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import Container from 'react-bootstrap/Container';
 import LogoutButton from "./LogoutButton";
 import LoginButton from "./LoginButton";
+import BestBuyLogo from './img/BestBuyLogo.png'
+import './Header.css';
 
 class Header extends React.Component {
   constructor(props) {
@@ -18,9 +20,9 @@ class Header extends React.Component {
 render() {
   return(
     <div>
-      <Navbar bg="light" expand="lg">
+      <Navbar className="color-nav" expand="lg">
       <Container>
-        <Navbar.Brand href="/">Product Tracker</Navbar.Brand>
+        <Navbar.Brand href="/"><img class="navimage" src={BestBuyLogo}/>Product Tracker</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">

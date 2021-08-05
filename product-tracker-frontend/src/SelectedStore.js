@@ -15,13 +15,13 @@ class SelectedStore extends React.Component {
     return(
       <Modal show={this.props.modal_show} onHide={this.props.modal_off}>
         <Modal.Dialog>
-          <Modal.Header closeButton>
-            <Modal.Title>Store Name{this.props.store.store}</Modal.Title>
+          <Modal.Header>
+            <Modal.Title>{this.props.store.store}</Modal.Title>
           </Modal.Header>
 
           <Modal.Body>
             <p>Address: {this.props.store.address}</p>
-            <p>Product Quanity: {this.props.store.low_in_stock}</p>
+            <p>Inventory: {this.props.store.low_in_stock}</p>
             <p>Distance: {this.props.store.distance}</p>
           </Modal.Body>
 
@@ -33,7 +33,6 @@ class SelectedStore extends React.Component {
     </Modal>
     )
   }
-
 }
 
 
