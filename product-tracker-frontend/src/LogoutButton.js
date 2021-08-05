@@ -5,7 +5,7 @@ const LogoutButton = () => {
   const { logout } = useAuth0();
 
   return (
-    <button onClick={() => logout({ returnTo: "https://can-of-book-front.netlify.app/" })}>
+    <button onClick={() => logout({ returnTo: window.location.origin })}>
       Log Out
     </button>
   );

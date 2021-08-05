@@ -1,23 +1,23 @@
 import React from 'react';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
+//import Form from 'react-bootstrap/Form';
+//import Button from 'react-bootstrap/Button';
+//import Card from 'react-bootstrap/Card';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Store from './Store.js';
+//import Store from './Store.js';
 import SelectedStore from './SelectedStore.js';
 import ProductForm from './ProductForm.js';
 import Header from './Header.js';
-import data from './data.json';
+//import data from './data.json';
 import Stores from './Stores.js'
-import Products from './Products.js'
-import SelectedProduct from './SelectedProduct.js'
+//import Products from './Products.js'
+//import SelectedProduct from './SelectedProduct.js'
 import {
   BrowserRouter as Router,
   Switch,
   Route
 } from "react-router-dom";
 import AboutUs from './AboutUs.js';
-import Profile from './Profile.js';
+//import Profile from './Profile.js';
 
 
 class App extends React.Component {
