@@ -14,7 +14,8 @@ class Stores extends React.Component {
     return(
       <div className="container">
         <div className="row">
-          {this.props.stores.filter(store => store.lowInStock === 'In Stock').map(store => {
+          {/* {this.props.stores.filter(store => store.lowInStock === 'In Stock').map(store => { */}
+          {this.props.stores.map(store => {
               return (
                 <div className="col-sm-4">
                   <Store modal_on={this.props.modal_on} store={store.store} address={store.address} low_in_stock={store.lowInStock} distance={store.distance} />

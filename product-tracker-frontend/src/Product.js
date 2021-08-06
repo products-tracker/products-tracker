@@ -19,7 +19,7 @@ class Products extends React.Component {
       // clicked: this.state.clicked + 1,
       // favorite: true
     })
-    this.props.modal_on({image: this.props.image, title: this.props.title, price: this.props.price, description: this.props.description, category: this.props.category})
+    // this.props.modal_on({image: this.props.image, title: this.props.title, price: this.props.price, description: this.props.description, category: this.props.category})
   }
 
   render() {
@@ -27,11 +27,11 @@ class Products extends React.Component {
     return(
       <div>
         <Card style={{ width: '18rem', height: '30rem', margin: '1rem'}} onClick={this.click}>
-          <Card.Img className="image" variant="top" src={this.props.image}/>
+          <Card.Img variant="top" src={this.props.image}/>
           <Card.Body>
-            <Card.Title>Product Name: {this.props.title}</Card.Title>
+            <Card.Title>Product Name: {this.props.name}</Card.Title>
             <Card.Text>
-              {/* <p>Product Price: {this.props.price}</p> */}
+              <p>Product SKU: {this.props.sku}</p>
               {/* <li class="list-group-item">Product Price: {this.props.price}</li> */}
               {/* <p>Product Description: {this.props.description}</p> */}
               {/* <p>Product Category: {this.props.category}</p> */}
