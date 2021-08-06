@@ -83,9 +83,9 @@ class Store extends React.Component {
             <p>Distance: {this.props.distance}</p>
           </Card.Text>
         </Card.Body>
-        <div class="card-footer text-muted">
+        {/* <div class="card-footer text-muted">
           {fav}
-        </div>
+        </div> */}
       </Card>
     )
   }

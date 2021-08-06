@@ -88,18 +88,16 @@ class App extends React.Component {
           <Switch>
 
           <Route exact path="/">
-            <ProductForm storesData={this.storesData}  productInfo={this.productInfo} updateRange={this.updateRange}/>
+              <ProductForm storesData={this.storesData}  productInfo={this.productInfo} updateRange={this.updateRange}/>
               <Stores stores={this.state.storesData} modal_on={this.modal_on} product={this.state.productInfo} show={this.state.showProduct} range={this.state.range}/>
               <SelectedStore modal_show={this.state.display_modal} modal_off={this.modal_off} store={this.state.obj} />
-              {/* <Products modal_on={this.modal_on} />
-              <SelectedProduct modal_show={this.state.display_modal} modal_off={this.modal_off} product={this.state.obj} /> */}
             </Route>
 
-          <Route exact path="/stores">
-            <ProductForm storesData={this.storesData} />
-            <Stores stores={this.state.storesData} modal_on={this.modal_on} />
-            <SelectedStore modal_show={this.state.display_modal} modal_off={this.modal_off} store={this.state.obj} />
-          </Route>
+          {/* <Route exact path="/stores">
+              <ProductForm storesData={this.storesData}  productInfo={this.productInfo} updateRange={this.updateRange}/>
+              <Stores stores={this.state.storesData} modal_on={this.modal_on} product={this.state.productInfo} show={this.state.showProduct} range={this.state.range}/>
+              <SelectedStore modal_show={this.state.display_modal} modal_off={this.modal_off} store={this.state.obj} />
+          </Route> */}
           <Route exact path="/products">
             <ProductForm2 productData={this.productData}/>
             <Products products={this.state.productData} modal_on={this.modal_on} />
