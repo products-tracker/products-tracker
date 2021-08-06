@@ -21,8 +21,8 @@ class Store extends React.Component {
   }
 
   addStore = () => {
-    console.log(`http://localhost:3001/store?store=${this.state.store}&address=${this.state.address}&low_in_stock=${this.state.low_in_stock}&distance=${this.state.distance}&favorite=${this.state.favorite}`)
-    axios.post(`http://localhost:3001/store?store=${this.props.store}&address=${this.props.address}&low_in_stock=${this.props.low_in_stock}&distance=${this.props.distance}&favorite=true`)
+    console.log(`http://localhost:3001/stores?store=${this.state.store}&address=${this.state.address}&low_in_stock=${this.state.low_in_stock}&distance=${this.state.distance}&favorite=${this.state.favorite}`)
+    axios.post(`http://localhost:3001/stores?store=${this.props.store}&address=${this.props.address}&low_in_stock=${this.props.low_in_stock}&distance=${this.props.distance}&favorite=true`)
     .then(() => this.setState({ store: '', address: '', low_in_stock: '', distance: 0, favorite: false}))
     .catch(error => {
       console.error('There was an error!', error);

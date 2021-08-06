@@ -18,6 +18,7 @@ import {
 } from "react-router-dom";
 import AboutUs from './AboutUs.js';
 //import Profile from './Profile.js';
+//import ProductInfo from './ProductInfo.js';
 
 
 class App extends React.Component {
@@ -27,7 +28,10 @@ class App extends React.Component {
       product: '',
       display_modal: false,
       obj: '',
-      storesData: []
+      storesData: [],
+      productData: {},
+      showProduct: false,
+      range: 0
     }
   }
 
@@ -49,6 +53,18 @@ class App extends React.Component {
       storesData: stores
     })
   }
+  productData = (product) => {
+    this.setState({
+      productData: product,
+      showProduct: true,
+    })
+  }
+  updateRange = (data) =>{
+    this.setState({
+      range: data
+    })
+  }
+
 
   render() {
     console.log(this.state.obj)
@@ -58,8 +74,8 @@ class App extends React.Component {
           <Header />
           <Switch>
           <Route exact path="/">
-            <ProductForm storesData={this.storesData} />
-              <Stores stores={this.state.storesData} modal_on={this.modal_on} />
+            <ProductForm storesData={this.storesData}  productData={this.productData} updateRange={this.updateRange}/>
+              <Stores stores={this.state.storesData} modal_on={this.modal_on} product={this.state.productData} show={this.state.showProduct} range={this.state.range}/>
               <SelectedStore modal_show={this.state.display_modal} modal_off={this.modal_off} store={this.state.obj} />
               {/* <Products modal_on={this.modal_on} />
               <SelectedProduct modal_show={this.state.display_modal} modal_off={this.modal_off} product={this.state.obj} /> */}
