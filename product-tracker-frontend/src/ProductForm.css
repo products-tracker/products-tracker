@@ -39,8 +39,8 @@
   font-weight: bold;
   }
 
-  .btn-primary:hover {
-    color: #fff;
-    background-color: rgb(10,104,191);
-    border-color: white;
+.btn-primary:hover {
+  color: #fff;
+  background-color: rgb(10,104,191);
+  border-color: white;
 }
