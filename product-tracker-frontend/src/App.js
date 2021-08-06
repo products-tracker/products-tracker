@@ -9,8 +9,8 @@ import ProductForm from './ProductForm.js';
 import Header from './Header.js';
 //import data from './data.json';
 import Stores from './Stores.js'
-//import Products from './Products.js'
-//import SelectedProduct from './SelectedProduct.js'
+import Products from './Products.js'
+import SelectedProduct from './SelectedProduct.js'
 import {
   BrowserRouter as Router,
   Switch,
@@ -18,7 +18,11 @@ import {
 } from "react-router-dom";
 import AboutUs from './AboutUs.js';
 //import Profile from './Profile.js';
+
 //import ProductInfo from './ProductInfo.js';
+
+import ProductForm2 from './ProductForm2.js';
+
 
 
 class App extends React.Component {
@@ -29,9 +33,12 @@ class App extends React.Component {
       display_modal: false,
       obj: '',
       storesData: [],
-      productData: {},
+
+      productInfo: {},
       showProduct: false,
-      range: 0
+      range: 0,
+      productData:[]
+
     }
   }
 
@@ -53,9 +60,9 @@ class App extends React.Component {
       storesData: stores
     })
   }
-  productData = (product) => {
+  productInfo = (product) => {
     this.setState({
-      productData: product,
+      productInfo: product,
       showProduct: true,
     })
   }
@@ -66,6 +73,12 @@ class App extends React.Component {
   }
 
 
+  productData = (products) => {
+    this.setState({
+      productData: products
+    })
+  }
+
   render() {
     console.log(this.state.obj)
     return(
@@ -73,13 +86,26 @@ class App extends React.Component {
         <Router>
           <Header />
           <Switch>
+
           <Route exact path="/">
-            <ProductForm storesData={this.storesData}  productData={this.productData} updateRange={this.updateRange}/>
-              <Stores stores={this.state.storesData} modal_on={this.modal_on} product={this.state.productData} show={this.state.showProduct} range={this.state.range}/>
+            <ProductForm storesData={this.storesData}  productInfo={this.productInfo} updateRange={this.updateRange}/>
+              <Stores stores={this.state.storesData} modal_on={this.modal_on} product={this.state.productInfo} show={this.state.showProduct} range={this.state.range}/>
               <SelectedStore modal_show={this.state.display_modal} modal_off={this.modal_off} store={this.state.obj} />
               {/* <Products modal_on={this.modal_on} />
               <SelectedProduct modal_show={this.state.display_modal} modal_off={this.modal_off} product={this.state.obj} /> */}
             </Route>
+
+          <Route exact path="/stores">
+            <ProductForm storesData={this.storesData} />
+            <Stores stores={this.state.storesData} modal_on={this.modal_on} />
+            <SelectedStore modal_show={this.state.display_modal} modal_off={this.modal_off} store={this.state.obj} />
+          </Route>
+          <Route exact path="/products">
+            <ProductForm2 productData={this.productData}/>
+            <Products products={this.state.productData} modal_on={this.modal_on} />
+            <SelectedProduct modal_show={this.state.display_modal} modal_off={this.modal_off} product={this.state.obj} />
+          </Route>
+
           </Switch>
             <Route exact path="/aboutus">
               <AboutUs />

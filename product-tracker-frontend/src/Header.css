@@ -8,8 +8,9 @@
 
 .navbar-light .navbar-brand {
   color: white;
-  font-size: large;
+  font-size: xx-large;
   font-family: sans-serif;
+  margin-left: 25px;
 }
 
 .navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {

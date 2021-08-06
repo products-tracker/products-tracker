@@ -20,8 +20,10 @@ class Stores extends React.Component {
             }
         </div>
         <div className="row">
+
           
           {this.props.stores.filter(store => store.distance < this.props.range).sort((a, b)=> (a.lowInStock.length - b.lowInStock.length)).map(store => {
+
               return (
                 <div className="col-sm-4">
                   <Store modal_on={this.props.modal_on} store={store.store} address={store.address} low_in_stock={store.lowInStock} distance={store.distance} />

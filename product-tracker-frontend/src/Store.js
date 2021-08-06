@@ -21,7 +21,11 @@ class Store extends React.Component {
   }
 
   addStore = () => {
+
     console.log(`http://localhost:3001/stores?store=${this.state.store}&address=${this.state.address}&low_in_stock=${this.state.low_in_stock}&distance=${this.state.distance}&favorite=${this.state.favorite}`)
+
+    // console.log(`http://localhost:3001/store?store=${this.state.store}&address=${this.state.address}&low_in_stock=${this.state.low_in_stock}&distance=${this.state.distance}&favorite=${this.state.favorite}`)
+
     axios.post(`http://localhost:3001/stores?store=${this.props.store}&address=${this.props.address}&low_in_stock=${this.props.low_in_stock}&distance=${this.props.distance}&favorite=true`)
     .then(() => this.setState({ store: '', address: '', low_in_stock: '', distance: 0, favorite: false}))
     .catch(error => {
@@ -30,7 +34,7 @@ class Store extends React.Component {
   }
 
   removeStore = () => {
-    axios.delete(`http://localhost:3001/store?store=${this.props.store}&address=${this.props.address}&low_in_stock=${this.props.low_in_stock}&distance=${this.props.distance}&favorite=false`)
+    axios.delete(`http://localhost:3001/stores?store=${this.props.store}&address=${this.props.address}&low_in_stock=${this.props.low_in_stock}&distance=${this.props.distance}&favorite=false`)
     .then(() => this.setState({ store: '', address: '', low_in_stock: '', distance: 0, favorite: false}))
     .catch(error => {
       console.error('There was an error!', error);
@@ -39,12 +43,12 @@ class Store extends React.Component {
 
   click = () => {
     // console.log(this.props)
-    this.setState({
-      store: this.props.store, 
-      address: this.props.address, 
-      low_in_stock: this.props.low_in_stock, 
-      distance: this.props.distance
-    })
+    // this.setState({
+    //   store: this.props.store, 
+    //   address: this.props.address, 
+    //   low_in_stock: this.props.low_in_stock, 
+    //   distance: this.props.distance
+    // })
     if (this.state.favorite === true) {
       this.setState({
         favorite: false

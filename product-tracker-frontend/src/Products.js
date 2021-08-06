@@ -12,27 +12,27 @@ class Products extends React.Component {
     }
   }
 
-  componentDidMount() {
-     axios.get('http://localhost:3001/fakestore')
-      .then(products => {
-        this.setState({products: products.data})
-      })
-  }
+  // componentDidMount() {
+  //    axios.get('http://localhost:3001/fakestore')
+  //     .then(products => {
+  //       this.setState({products: products.data})
+  //     })
+  // }
 
-  displayGrid = () => {
-    console.log(this.state.products)
+  // displayGrid = () => {
+  //   console.log(this.state.products)
 
-  }
+  // }
 
   render() {
     console.log(this.state.products)
     return(
       <div className="container">
         <div className="row">
-          {this.state.products.map((product, idx) => {
+          {this.props.products.map((product, idx) => {
             return(
               <div className="col-sm-4">
-                <Product modal_on={this.props.modal_on} image={product.image} title={product.title} price={product.price} description={product.description} category={product.category} /> 
+                <Product modal_on={this.props.modal_on} image={product.image} sku={product.sku} price={product.price} name={product.name} /> 
               </div>
             )        
           })}

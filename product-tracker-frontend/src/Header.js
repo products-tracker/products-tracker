@@ -24,11 +24,14 @@ render() {
     <div>
       <Navbar className="color-nav" expand="lg">
       <Container>
-        <Navbar.Brand href="/"><img class="navimage" src={BestBuyLogo}/>Product Tracker</Navbar.Brand>
+      {/* <img class="navimage" src={BestBuyLogo}/> */}
+        <Navbar.Brand href="/">Product Tracker</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="/">Home</Nav.Link>
+            {/* <Nav.Link href="/">Home</Nav.Link> */}
+            <Nav.Link href="/">Products</Nav.Link>
+            <Nav.Link href="/stores">Stores</Nav.Link>
             <Nav.Link href="/aboutus">About Us</Nav.Link>
             <NavDropdown title="User" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Profile</NavDropdown.Item>
