@@ -39,7 +39,7 @@ class ProductForm extends React.Component {
   getPriceAndName = () => {
     axios.get(`http://localhost:3001/price?sku=${this.state.sku}`)
      .then(product => {
-      this.props.productData(product.data)
+      this.props.productInfo(product.data)
      })
   }
 

@@ -30,16 +30,16 @@ render() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             {/* <Nav.Link href="/">Home</Nav.Link> */}
-            <Nav.Link href="/">Products</Nav.Link>
-            <Nav.Link href="/stores">Stores</Nav.Link>
-            <Nav.Link href="/aboutus">About Us</Nav.Link>
+            <Nav.Link href="/">Stores</Nav.Link>
+            <Nav.Link href="/products">Products</Nav.Link>
+            {/* <Nav.Link href="/aboutus">About Us</Nav.Link>
             <NavDropdown title="User" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Profile</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Cart</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">Cart</NavDropdown.Item> */}
               {/* <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item> */}
               {/* <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item> */}
-            </NavDropdown>
+            {/* </NavDropdown> */}
           </Nav>
         </Navbar.Collapse>
         {!this.props.auth0.isAuthenticated &&
