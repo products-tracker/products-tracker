@@ -18,7 +18,11 @@ import {
 } from "react-router-dom";
 import AboutUs from './AboutUs.js';
 //import Profile from './Profile.js';
+
+//import ProductInfo from './ProductInfo.js';
+
 import ProductForm2 from './ProductForm2.js';
+
 
 
 class App extends React.Component {
@@ -29,7 +33,12 @@ class App extends React.Component {
       display_modal: false,
       obj: '',
       storesData: [],
-      productData: []
+
+      productInfo: {},
+      showProduct: false,
+      range: 0,
+      productData:[]
+
     }
   }
 
@@ -51,6 +60,18 @@ class App extends React.Component {
       storesData: stores
     })
   }
+  productInfo = (product) => {
+    this.setState({
+      productInfo: product,
+      showProduct: true,
+    })
+  }
+  updateRange = (data) =>{
+    this.setState({
+      range: data
+    })
+  }
+
 
   productData = (products) => {
     this.setState({
@@ -65,16 +86,26 @@ class App extends React.Component {
         <Router>
           <Header />
           <Switch>
+
+          <Route exact path="/">
+            <ProductForm storesData={this.storesData}  productInfo={this.productInfo} updateRange={this.updateRange}/>
+              <Stores stores={this.state.storesData} modal_on={this.modal_on} product={this.state.productInfo} show={this.state.showProduct} range={this.state.range}/>
+              <SelectedStore modal_show={this.state.display_modal} modal_off={this.modal_off} store={this.state.obj} />
+              {/* <Products modal_on={this.modal_on} />
+              <SelectedProduct modal_show={this.state.display_modal} modal_off={this.modal_off} product={this.state.obj} /> */}
+            </Route>
+
           <Route exact path="/stores">
             <ProductForm storesData={this.storesData} />
             <Stores stores={this.state.storesData} modal_on={this.modal_on} />
             <SelectedStore modal_show={this.state.display_modal} modal_off={this.modal_off} store={this.state.obj} />
           </Route>
-          <Route exact path="/">
+          <Route exact path="/products">
             <ProductForm2 productData={this.productData}/>
             <Products products={this.state.productData} modal_on={this.modal_on} />
             <SelectedProduct modal_show={this.state.display_modal} modal_off={this.modal_off} product={this.state.obj} />
           </Route>
+
           </Switch>
             <Route exact path="/aboutus">
               <AboutUs />

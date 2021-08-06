@@ -8,7 +8,7 @@
 .form-control {
   margin-top: 25px;
   margin-left: 100px;
-  width: 400px;
+  width: 200px;
 }
 
 .formgroup {
@@ -21,10 +21,18 @@
 
 .zipcode {
   position: absolute;
-  margin-left: 550px;
+  margin-left: 350px;
   /* margin-right: 50px; */
 }
 
+.range {
+  position: absolute;
+  margin-left: 600px;
+  /* margin-right: 50px; */
+}
+.range.form-control{
+  width: 350px;
+}
 .btn {
   position: absolute;
   /* justify-content: center;

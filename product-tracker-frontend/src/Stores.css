@@ -17,3 +17,7 @@
   width: 100%;
   display: flex;
 }
+
+.info {
+  margin-left: 35px;
+}
